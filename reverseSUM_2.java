@@ -5,19 +5,13 @@ public class reverseSUM_2 {
         Scanner sc = new Scanner(System.in);
         System.out.print("请输入一个正整数：");
         int n = sc.nextInt();
-        int x = n;// x的作用是保留原数值
-        int i = 0, m = 0;
-        do {//求正整数的位数
-            m = n % 10;
-            n = n / 10;
-            i++;
-        } while (n != 0);
-        System.out.println("您输入的正整数的位数是：" + i);
-        String k = String.valueOf(x);//将正整数转化为字符串k
-        reverseSUM(k);
+        String line = String.valueOf(n);//将正整数转化为字符串k
+        System.out.println("您输入的正整数的位数是：" + line.length());
+        reverseSUM(line);
     }
-
     public static void reverseSUM(String s) {
+/*
+        //将字符串转为字符数组
         char[] chars = s.toCharArray();//字符串转化为字符数组
         char[] chars1 = new char[chars.length];
         for (int i = 0; i < chars.length; i++)//将字符数组倒序
@@ -25,5 +19,11 @@ public class reverseSUM_2 {
         String s1 = String.valueOf(chars1);//将倒序的字符数组转化为字符串
         System.out.print("您输入的正整数的逆序是：");
         System.out.println(s1);
+*/
+        //不将字符串转为字符数组
+        System.out.print("您输入的正整数的逆序是：");
+        for (int i = s.length() - 1; i >= 0; i--) {
+            System.out.print(s.charAt(i));
+        }
     }
 }
